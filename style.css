@@ -1,0 +1,279 @@
+/* ==============================
+   RESET Y BODY
+============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f2ede2;
+  color: #3e2c20;
+}
+
+/* ==============================
+   HERO FULL SCREEN ESTABLE
+============================== */
+.hero {
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80') center center / cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  background: rgba(62,44,32,0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  animation: fadeInHero 1.2s ease-out;
+}
+
+@keyframes fadeInHero {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 8vw;
+  color: #f2ede2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  animation: fadeInText 1.5s ease-out;
+}
+
+.hero-overlay p {
+  font-size: 2.2vw;
+  max-width: 700px;
+  margin-bottom: 30px;
+  color: #f2ede2;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  animation: fadeInText 1.7s ease-out;
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-overlay button {
+  padding: 1.2em 2.5em;
+  font-size: 1.5vw;
+  background: #c4a96f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #3e2c20;
+  font-weight: bold;
+  transition: 0.3s transform, 0.3s background;
+  animation: fadeInText 2s ease-out;
+}
+
+.hero-overlay button:hover {
+  background: #b08b4f;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 768px) {
+  .hero-overlay h1 { font-size: 12vw; }
+  .hero-overlay p { font-size: 4vw; }
+  .hero-overlay button { font-size: 4vw; padding: 1em 2em; }
+}
+
+/* ==============================
+   HEADER
+============================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #6b4c2f;
+  color: #f2ede2;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #f2ede2;
+}
+
+.cart-btn {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  background: #c4a96f;
+  border: none;
+  padding: 10px 18px;
+  font-weight: bold;
+  color: #3e2c20;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: 0.2s transform, 0.2s background;
+}
+
+.cart-btn:hover {
+  background: #b08b4f;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ==============================
+   PRODUCTOS
+============================== */
+.productos {
+  padding: 80px 50px 120px 50px;
+  text-align: center;
+}
+
+.productos h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin-bottom: 50px;
+  color: #3e2c20;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  background: #f7f1e6;
+  padding: 40px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(62,44,32,0.25);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(62,44,32,0.35);
+}
+
+.card h3 { color: #6b4c2f; margin-bottom: 10px; font-size: 20px; }
+.card p { font-size: 14px; margin-bottom: 15px; color: #4b3621; }
+.card span { font-weight: bold; color: #6b4c2f; display: block; margin-bottom: 15px; }
+.card button { margin-top: 10px; background: #c4a96f; border: none; padding: 10px; cursor: pointer; font-weight: bold; color: #3e2c20; border-radius: 6px; transition: 0.2s transform,0.2s background; }
+.card button:hover { background: #b08b4f; color: white; transform: scale(1.05); }
+
+/* ==============================
+   HISTORIA
+============================== */
+.historia {
+  background: #e6d9c3;
+  color: #3e2c20;
+  padding: 80px 60px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 60px auto;
+  max-width: 900px;
+  box-shadow: 0 12px 25px rgba(62,44,32,0.2);
+}
+
+.historia h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #6b4c2f;
+}
+
+.historia p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ==============================
+   CARRITO FLOTANTE
+============================== */
+.cart {
+  position: fixed;
+  top: 100px;
+  right: 25px;
+  width: 320px;
+  max-height: calc(100vh - 120px);
+  background: #f7f1e6;
+  box-shadow: -5px 5px 20px rgba(62,44,32,0.3);
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 3px solid #c4a96f;
+  border-radius: 12px;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.cart.active { right: 25px; }
+
+.cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.qty-controls { display: flex; align-items: center; gap: 8px; }
+.qty-controls button { background: #c4a96f; border: none; padding: 4px 10px; cursor: pointer; border-radius: 4px; color: #3e2c20; }
+
+.total { font-weight: bold; margin-top: 20px; color: #6b4c2f; }
+.checkout-btn { width: 100%; background: #6b4c2f; color: #f2ede2; padding: 12px; border: none; cursor: pointer; margin-top: 10px; border-radius: 6px; transition: 0.2s transform,0.2s background; }
+.checkout-btn:hover { background: #543a27; transform: scale(1.03); }
+
+/* ==============================
+   NOTIFICACION
+============================== */
+.notification { position: fixed; bottom: 30px; right: 30px; background: #6b4c2f; color: #f2ede2; padding: 15px 25px; opacity: 0; transform: translateY(20px); transition: 0.3s; border-radius: 6px; }
+.notification.show { opacity: 1; transform: translateY(0); }
+.bounce { animation: bounce 0.5s; }
+@keyframes bounce { 0% { transform: scale(1); } 30% { transform: scale(1.2); } 60% { transform: scale(0.9); } 100% { transform: scale(1); } }
+
+/* ==============================
+   WHATSAPP FLOTANTE
+============================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background: #25D366;
+  color: white;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ==============================
+   RESPONSIVE GENERAL
+============================== */
+@media (max-width: 768px) {
+  .cards { flex-direction: column; align-items: center; }
+  .cart { width: 90%; right: 5%; top: 80px; max-height: calc(100vh - 100px); }
+}

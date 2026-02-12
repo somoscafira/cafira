@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafíra - Café Gourmet</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO PRINCIPAL FULL SCREEN -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Cafíra</h1>
+      <p>El café gourmet que transforma cada sorbo en un ritual</p>
+      <button onclick="scrollToProducts();">Comprar ahora</button>
+    </div>
+  </section>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Cafíra</div>
+    <button class="cart-btn">Carrito 🛒</button>
+  </header>
+
+  <!-- SECCIÓN PRODUCTOS -->
+  <section class="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Café en grano (250g)</h3>
+        <p>Granos seleccionados cuidadosamente para un aroma perfecto.
+        </p>
+        <span>$15.000 COP</span>
+        <button onclick="addToCart('Café en grano', 15000)">Agregar</button>
+      </div>
+      <div class="card">
+        <h3>Café molido (250g)</h3>
+        <p>Molienda perfecta para tu cafetera o prensa francesa.</p>
+        <span>$15.000 COP</span>
+        <button onclick="addToCart('Café molido', 15000)">Agregar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HISTORIA -->
+  <section class="historia">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Cafíra nace del deseo de transformar el café en un ritual elegante.
+      Seleccionamos granos de origen y cuidamos cada detalle del tostado
+      para ofrecer una experiencia gourmet auténtica.
+    </p>
+    <p>
+      No es solo una bebida. Es carácter, aroma y presencia.
+      Es el momento donde todo se detiene y comienza el ritual.
+    </p>
+  </section>
+
+  <!-- CARRITO -->
+  <div class="cart">
+    <h3>Carrito</h3>
+    <div class="cart-items"></div>
+    <div class="total">Total: $0 COP</div>
+    <button class="checkout-btn">Enviar por WhatsApp</button>
+  </div>
+
+  <!-- NOTIFICACION -->
+  <div class="notification">Producto agregado</div>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/573232928781" class="whatsapp-float" target="_blank">💬</a>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
+  <script>
+    // Scroll suave con offset para header
+    function scrollToProducts() {
+      const productos = document.querySelector('.productos');
+      const headerOffset = 80; 
+      const elementPosition = productos.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>
